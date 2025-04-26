@@ -36,7 +36,7 @@ function checkRequired(inputArr)
 {
   if(input.value.trim()=='')
   {
-    showError(input,`${input.id} is required`);
+    showError(input,`${getFieldName(input)} is required`);
   }
   else
   {
@@ -44,6 +44,12 @@ function checkRequired(inputArr)
   }
 
 })
+
+}
+//get field input
+function getFieldName(input)
+{
+  return input.id.charAt(0).toUpperCase()+input.id.slice(1);
 
 }
 
